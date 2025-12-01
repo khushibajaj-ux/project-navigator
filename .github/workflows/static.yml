@@ -2,7 +2,8 @@ name: Deploy Vite Site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -14,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
@@ -27,8 +28,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload production-ready files
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload dist folder
+        uses: actions/upload-pages-artifact@v2
         with:
           path: dist
 
@@ -37,4 +38,4 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
