@@ -89,7 +89,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 8s ease-in-out infinite",
         "float-delayed": "float 8s ease-in-out 4s infinite",
-        "fade-in": "fade-in 0.8s cubic-bezier(0.5, 0, 0, 1)",
+        "fade-in": "fade-in 0.8s cubic-bezier(0.5, 0, 0, 1) forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },

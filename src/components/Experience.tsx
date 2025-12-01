@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import ikanLogo from "@/assets/ikan-logo.jpeg";
 import projectproLogo from "@/assets/projectpro-logo.jpeg";
 import simplilearnLogo from "@/assets/simplilearn-logo.jpeg";
+import groupPhoto from "@/assets/group-photo.jpeg";
 
 const experiences = [
   {
@@ -48,9 +49,24 @@ const Experience = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold tracking-wider text-sm uppercase">Career Path</span>
           <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mt-2">Professional Experience</h2>
+        </div>
+
+        {/* Team Photo Section */}
+        <div className="mb-16 animate-fade-in">
+          <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-card group">
+            <img 
+              src={groupPhoto} 
+              alt="Team collaboration at work" 
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <p className="text-sm font-medium">Collaborative team environment fostering growth and innovation</p>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/30 before:to-transparent">
@@ -59,13 +75,14 @@ const Experience = () => {
               key={exp.id}
               className={`relative flex items-center justify-between md:justify-normal ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
-              } group`}
+              } group animate-fade-in`}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Logo Circle */}
               <div
                 className={`w-24 h-24 rounded-full border-4 border-card shadow-md shadow-secondary bg-background shrink-0 md:order-1 ${
                   index % 2 === 1 ? "md:-translate-x-1/2" : "md:translate-x-1/2"
-                } z-10 overflow-hidden p-2 flex items-center justify-center`}
+                } z-10 overflow-hidden p-2 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
               >
                 <img 
                   src={exp.logo} 
@@ -74,7 +91,7 @@ const Experience = () => {
                 />
               </div>
 
-              <div className="w-[calc(100%-4.5rem)] md:w-[calc(50%-3rem)] bg-card p-6 rounded-2xl shadow-sm border border-border hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <div className="w-[calc(100%-4.5rem)] md:w-[calc(50%-3rem)] bg-card p-6 rounded-2xl shadow-sm border border-border hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <h3 className="font-bold text-lg text-brand-dark">{exp.title}</h3>
