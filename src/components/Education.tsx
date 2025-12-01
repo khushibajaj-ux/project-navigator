@@ -1,3 +1,6 @@
+import ucdLogo from "@/assets/ucd-logo.jpeg";
+import christLogo from "@/assets/christ-logo.jpeg";
+
 const educations = [
   {
     id: 1,
@@ -8,7 +11,7 @@ const educations = [
     status: "Current",
     description:
       "Specializing in Management of Projects and Change, focusing on sustainable results, collaboration, and ethical frameworks.",
-    logo: "UCD",
+    logo: ucdLogo,
   },
   {
     id: 2,
@@ -19,7 +22,7 @@ const educations = [
     status: "Completed",
     description:
       "Major in Computer Applications, Mathematics, and Electronics. Built a strong analytical foundation for technical project management.",
-    logo: "CU",
+    logo: christLogo,
   },
 ];
 
@@ -43,10 +46,12 @@ const Education = () => {
               className="group bg-background rounded-3xl p-8 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-start gap-6">
-                <div className="w-24 h-24 rounded-2xl bg-card shadow-sm border border-border shrink-0 flex items-center justify-center">
-                  <div className="w-full h-full rounded-2xl bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
-                    {edu.logo}
-                  </div>
+                <div className="w-24 h-24 rounded-2xl bg-background shadow-sm border border-border shrink-0 overflow-hidden p-2 flex items-center justify-center">
+                  <img 
+                    src={edu.logo} 
+                    alt={`${edu.institution} logo`} 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
