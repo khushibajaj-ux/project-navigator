@@ -1,4 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
+import ikanLogo from "@/assets/ikan-logo.jpeg";
+import projectproLogo from "@/assets/projectpro-logo.jpeg";
+import simplilearnLogo from "@/assets/simplilearn-logo.jpeg";
 
 const experiences = [
   {
@@ -6,7 +9,7 @@ const experiences = [
     title: "Program Advisor",
     company: "Ikan Uplevel Technologies",
     year: "2025",
-    logo: "IU",
+    logo: ikanLogo,
     responsibilities: [
       "Advised professionals on FAANG hiring trends.",
       "Improved enrolment efficiency using data tools.",
@@ -17,7 +20,7 @@ const experiences = [
     title: "Inside Sales Representative",
     company: "Project Pro (Iconiq Inc)",
     year: "2024 - 2025",
-    logo: "PP",
+    logo: projectproLogo,
     responsibilities: [
       "Optimized sales funnels with data-driven solutions.",
       "Mentored junior sales team members.",
@@ -28,7 +31,7 @@ const experiences = [
     title: "Inside Sales Manager",
     company: "Simplilearn Solutions",
     year: "2023 - 2024",
-    logo: "SL",
+    logo: simplilearnLogo,
     responsibilities: [
       "Surpassed monthly sales targets by 30%.",
       "Managed post-sale client communications.",
@@ -60,13 +63,15 @@ const Experience = () => {
             >
               {/* Logo Circle */}
               <div
-                className={`w-24 h-24 rounded-full border-4 border-card shadow-md shadow-secondary bg-card shrink-0 md:order-1 ${
+                className={`w-24 h-24 rounded-full border-4 border-card shadow-md shadow-secondary bg-background shrink-0 md:order-1 ${
                   index % 2 === 1 ? "md:-translate-x-1/2" : "md:translate-x-1/2"
-                } z-10 flex items-center justify-center`}
+                } z-10 overflow-hidden p-2 flex items-center justify-center`}
               >
-                <div className="w-full h-full rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
-                  {exp.logo}
-                </div>
+                <img 
+                  src={exp.logo} 
+                  alt={`${exp.company} logo`} 
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               <div className="w-[calc(100%-4.5rem)] md:w-[calc(50%-3rem)] bg-card p-6 rounded-2xl shadow-sm border border-border hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300 cursor-default">

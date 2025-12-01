@@ -1,4 +1,5 @@
 import { Briefcase, MapPin } from "lucide-react";
+import profilePhoto from "@/assets/photo.jpeg";
 
 const About = () => {
   return (
@@ -7,17 +8,14 @@ const About = () => {
         <div className="grid md:grid-cols-12 gap-8">
           {/* Image Card */}
           <div className="md:col-span-5">
-            <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden bg-secondary group shadow-lg border border-border">
-              <div className="absolute inset-0 flex items-center justify-center text-accent p-8 text-center">
-                <div className="space-y-4">
-                  <div className="w-32 h-32 mx-auto bg-primary rounded-full flex items-center justify-center text-primary-foreground text-5xl font-bold shadow-xl">
-                    KB
-                  </div>
-                  <p className="text-sm text-foreground/70">Professional Portrait</p>
-                </div>
-              </div>
+            <div className="relative h-full min-h-[500px] rounded-3xl overflow-hidden bg-secondary group shadow-lg border border-border">
+              <img 
+                src={profilePhoto} 
+                alt="Khushi Bhardwaj Professional Portrait" 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -26,17 +24,25 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6">About Me</h2>
             <div className="prose prose-lg text-foreground mb-8 space-y-4">
               <p>
-                I am a <span className="font-semibold text-primary">Project Management Professional</span> with
-                a passion for organization and delivery.
+                I am a <span className="font-semibold text-primary">project-management professional</span> with 
+                a strong foundation in stakeholder communication, requirement mapping, and execution support.
               </p>
               <p>
-                My expertise lies in bridging the gap between technical requirements and business goals. With a
-                background in Computer Applications and hands-on experience in sales and program management, I
-                bring a unique perspective to stakeholder communication and risk mitigation.
+                With experience managing client-focused workflows, analyzing data for decision-making, and 
+                coordinating tasks across teams, I bring a unique blend of technical knowledge and business acumen 
+                to every project. My background in Computer Applications, Mathematics, and Electronics provides 
+                a strong analytical foundation that I leverage in my project management approach.
               </p>
               <p>
-                I thrive in dynamic environments where I can leverage data to make informed decisions and
-                coordinate cross-functional teams to deliver value.
+                Currently pursuing my MSc in Project Management at UCD Michael Smurfit Graduate Business School, 
+                I am developing advanced PM capabilities to grow into project and business management roles with 
+                confidence and clarity. I thrive in dynamic environments where I can bridge the gap between 
+                technical requirements and business goals, using data-driven insights to drive successful outcomes.
+              </p>
+              <p>
+                My experience spans program advisory, inside sales, and team leadership, where I've consistently 
+                demonstrated the ability to build trust with stakeholders, optimize processes, and deliver results 
+                that exceed expectations.
               </p>
             </div>
 
