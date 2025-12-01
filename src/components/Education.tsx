@@ -30,7 +30,7 @@ const Education = () => {
   return (
     <section id="education" className="py-24 bg-card relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold tracking-wider text-sm uppercase">
             Academic Background
           </span>
@@ -40,13 +40,14 @@ const Education = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {educations.map((edu) => (
+          {educations.map((edu, index) => (
             <div
               key={edu.id}
-              className="group bg-background rounded-3xl p-8 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-background rounded-3xl p-8 border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-secondary/50 hover:-translate-y-2 hover:scale-105 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex items-start gap-6">
-                <div className="w-24 h-24 rounded-2xl bg-background shadow-sm border border-border shrink-0 overflow-hidden p-2 flex items-center justify-center">
+                <div className="w-24 h-24 rounded-2xl bg-background shadow-sm border border-border shrink-0 overflow-hidden p-2 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <img 
                     src={edu.logo} 
                     alt={`${edu.institution} logo`} 
